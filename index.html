@@ -1,0 +1,54 @@
+<!DOCTYPE html>  
+<html lang="ru">
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>DVD Мультипликатор</title>  
+    <style>  
+        body {  
+            margin: 0;  
+            overflow: hidden;   
+            background-color: #f0f0f0;  
+        }  
+
+        #dvd {  
+            position: absolute;  
+            width: 270px;   
+            height: 170px;   
+        }  
+    </style>  
+</head>  
+<body>  
+    <img id="dvd" src="png-transparent-blu-ray-disc-hd-dvd-logo-cd-dvd-electronics-text-trademark-thumbnail.png" alt="DVD">   
+<link rel="stylesheet" href="style.css
+">
+    <script>  
+        const dvd = document.getElementById('dvd');  
+        let posX = Math.random() * window.innerWidth; 
+        let posY = Math.random() * window.innerHeight;   
+        let deltaX = 2;   
+        let deltaY = 2;
+        function animate() {  
+              
+            posX += deltaX;  
+            posY += deltaY;  
+
+            
+            if (posX + dvd.offsetWidth >= window.innerWidth || posX < 0) {  
+                deltaX = -deltaX; 
+            }  
+            if (posY + dvd.offsetHeight >= window.innerHeight || posY < 0) {  
+                deltaY = -deltaY;   
+            }  
+
+      
+            dvd.style.left = posX + 'px';  
+            dvd.style.top = posY + 'px';  
+
+            requestAnimationFrame(animate); // 
+        }  
+
+        animate();   
+    </script>  
+</body>  
+</html>
